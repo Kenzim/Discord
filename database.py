@@ -49,7 +49,6 @@ class Get:
         self.data = data
 
     def __exit__(self, exc_type, exc_value, tb):
-
         ensure_file_existence(self.filename)
         with open(self.filename, "wb") as fp:
             msgpack.pack(self.data, fp)
